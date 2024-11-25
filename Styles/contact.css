@@ -1,0 +1,329 @@
+/* --------------------- General Styles --------------------- */
+
+hr {
+    border: none;
+    border-top: 3px solid #6399CD;
+    margin: auto;
+    width: 20%;
+}
+
+/* --------------------- Spinner --------------------- */
+
+/* Style the Form Labels */
+.wpcf7 form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Input Fields */
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    padding: 5px 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    transition: border-bottom 0.3s ease, transform 0.2s ease;
+}
+
+.wpcf7 input[type="text"]:focus,
+.wpcf7 input[type="email"]:focus,
+.wpcf7 textarea:focus {
+    border-bottom: 2px solid #6399CD;
+    outline: none;
+    transform: scale(1.02);
+}
+
+/* Submit Button */
+.wpcf7 input[type="submit"] {
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+    background-color: var(--color-muted);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 0%;
+}
+
+.wpcf7 input[type="submit"]:hover {
+    background-color: var(--color-primary);
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.wpcf7 input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* Response Message Styling */
+.wpcf7-response-output {
+    outline: none;
+    margin: 0px 0;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Success Response */
+.wpcf7-mail-sent-ok {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Error Response */
+.wpcf7-validation-errors {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Custom Input Wrapper */
+.wpcf7-form-control-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.wpcf7-form-control-wrap input,
+.wpcf7-form-control-wrap textarea {
+    border: none;
+    width: 100%;
+    outline: none;
+    background: transparent;
+}
+
+/* --------------------- Contact Info Styling --------------------- */
+.contact-info {
+    background-color: var(--color-dark);
+    padding: 80px;
+    margin: 8% auto 0;
+    min-width: 120%;
+    box-shadow: var(--box-shadow-sky);
+}
+
+.contact-info i {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-info span {
+    font-size: 1rem;
+    color: whitesmoke;
+}
+
+.contact-info i:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* --------------------- Title and Text Styling --------------------- */
+.title-contact {
+    font-size: 3em;
+    color: var(--color-dark);
+}
+
+.info-title {
+    color: var(--color-light);
+}
+
+/* --------------------- Section Styling --------------------- */
+.on-site-section, .so-me-section {
+    background-color: var(--color-primary);
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+    width: 40%;
+    min-height: 250px;
+    box-shadow: var(--box-shadow-4s);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.on-site-section:hover, .so-me-section:hover {
+    transform: scale(1.05);
+    box-shadow: var(--box-shadow-sharp);
+}
+
+.on-site-section h3, .so-me-section h3 {
+    font-size: 1.5rem;
+    color: #2a2626;
+    margin-bottom: 1rem;
+}
+
+.on-site-section p, .so-me-section p {
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* --------------------- Social Media Links --------------------- */
+.social-media-links a {
+    color: var(--color-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media-links a:hover {
+    color: var(--color-dark);
+    transform: scale(1.1);
+}
+
+.social-media-links i {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+/* --------------------- Green Box Styling --------------------- */
+.greenbox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--color-muted);
+    width: 20%;
+    z-index: -1;
+    transition: transform 0.5s ease;
+}
+
+/* --------------------- Responsive Design --------------------- */
+
+/* Mobile Devices */
+@media (max-width: 767px) {
+    .contact-info {
+        padding: 30px;
+        margin: auto;
+        min-width: 80%;
+    }
+
+    .btn-contact {
+        margin-bottom: 10%;
+    }
+
+    .on-site-section, .so-me-section {
+        width: 90%;
+    }
+
+    .on-site-section h3, .so-me-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .on-site-section p, .so-me-section p {
+        font-size: 0.9rem;
+    }
+
+    .greenbox {
+        display: none;
+    }
+
+    .title-contact {
+        font-size: 2.5em;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .contact-info {
+        padding: 50px;
+        margin-top: 20%;
+        min-width: 100%;
+    }
+
+    .on-site-section, .so-me-section {
+        width: 45%;
+    }
+
+    .greenbox {
+        width: 20%;
+        height: 130%;
+    }
+
+    .title-contact {
+        font-size: 2.5em;
+    }
+}
+
+/* Desktops */
+@media (min-width: 1025px) {
+    .contact-info {
+        padding: 80px;
+        margin-top: 8%;
+        min-width: 130%;
+    }
+
+    .on-site-section, .so-me-section {
+        width: 40%;
+    }
+
+    .greenbox {
+        width: 20%;
+        height: 150%;
+    }
+
+    .title-contact {
+        font-size: 3em;
+    }
+}
+
+
+/* Remove the dot (usually created by ::before) */
+.wpcf7-spinner::before {
+    display: none; /* Remove the inner dot */
+}
+
+/* Spinner styles */
+.wpcf7-spinner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 0;
+    background-color: var(--color-primary);
+    margin: 20px auto;
+    -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+    animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+/* Submit button styles when form is submitting */
+form.submitting .wpcf7-submit {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Keyframes for rotation animation */
+@-webkit-keyframes sk-rotateplane {
+    0% { -webkit-transform: perspective(120px); }
+    50% { -webkit-transform: perspective(120px) rotateY(180deg); }
+    100% { -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); }
+}
+
+@keyframes sk-rotateplane {
+    0% { 
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg); 
+    }
+    50% { 
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg); 
+    }
+    100% { 
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(-180deg);
+        -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(-180deg);
+    }
+}

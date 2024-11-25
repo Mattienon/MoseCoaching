@@ -1,0 +1,394 @@
+/*
+ Theme Name: Swim Coach Basic
+ Theme URI: http://example.com
+ Author: Your Name
+ Author URI: http://yourwebsite.com
+ Description: A basic theme for a swim coaching startup.
+ Version: 1.0
+ License: GNU General Public License v2 or later
+ License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/* --------------------- Import Fonts --------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@500&display=swap');
+
+:root {
+    --color-light: #FCFCFC;  /* Light color */
+    --color-primary: #6399CD; /* Primary color */
+    --color-light-gray: #ECF0F1; /* Light gray background color */
+    --color-grey-title: rgb(55, 55, 55);
+    --color-grey-text: rgb(90, 90, 90);
+    --color-dark: #2C3E50;  /* Dark color */
+    --color-muted: #9DBBAE; /* Muted greenish color */
+
+    /* Box Shadows */
+
+  /* Box shadows */
+  --box-shadow-ML1: 0 1px 1px rgba(0,0,0,0.12), 
+  0 2px 2px rgba(0,0,0,0.12), 
+  0 4px 4px rgba(0,0,0,0.12), 
+  0 8px 8px rgba(0,0,0,0.12),
+  0 16px 16px rgba(0,0,0,0.12);
+  --box-shadow-4s: 0 1px 1px rgba(0,0,0,0.15), 
+  0 2px 2px rgba(0,0,0,0.15), 
+  0 4px 4px rgba(0,0,0,0.15), 
+  0 8px 8px rgba(0,0,0,0.15);
+  --box-shadow-6s: 0 1px 1px rgba(0,0,0,0.11), 
+  0 2px 2px rgba(0,0,0,0.11), 
+  0 4px 4px rgba(0,0,0,0.11), 
+  0 8px 8px rgba(0,0,0,0.11), 
+  0 16px 16px rgba(0,0,0,0.11), 
+  0 32px 32px rgba(0,0,0,0.11);
+  --box-shadow-sharp: 0 1px 1px rgba(0,0,0,0.25), 
+  0 2px 2px rgba(0,0,0,0.20), 
+  0 4px 4px rgba(0,0,0,0.15), 
+  0 8px 8px rgba(0,0,0,0.10),
+  0 16px 16px rgba(0,0,0,0.05);
+
+    /* Responsive Typography Variables */
+    --min-size: 14; /* Minimum font size */
+    --max-size: 24; /* Maximum font size */
+    --container-min: 320; /* Minimum container width */
+    --container-max: 2800; /* Maximum container width */
+    --viewport-min: 320; /* Minimum viewport width */
+    --viewport-max: 2800; /* Maximum viewport width */
+}
+
+/* Adaptive Containers */
+.container-adaptive {
+    --font-size: calc(
+        var(--min-size) * 1px +
+        ((var(--max-size) - var(--min-size)) *
+        (100cqw - var(--container-min) * 1px) /
+        (var(--container-max) - var(--container-min))
+    ));
+    font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+}
+
+/* Viewport-Based Adaptive Typography */
+.viewport-adaptive {
+    --font-size: calc(var(--min-size) * 1px + (var(--max-size) - var(--min-size)) * (100vw - var(--viewport-min) * 1px) / (var(--viewport-max) - var(--viewport-min)));
+    font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+}
+
+/* General Container Styles */
+.container {
+    width: clamp(200px, 100vw, 1500px); /* Responsive container with min and max width */
+    margin: 0 auto; /* Center the container */
+    overflow-x: hidden;
+}
+
+body{
+    background-color: var(--color-light-gray);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-grey-title); 
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+}
+h2{
+       font-size: 2.2rem;
+}
+body, p, a, li, .navbar-brand, .navbar-nav .nav-link {
+    font-weight: 500;
+    color: var(--color-grey-text); 
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Responsive Adjustments for Navbar and Footer */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.8rem;
+        flex-direction: column;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    footer {
+        padding: 1.5rem;
+    }
+}
+/* --------------------- Navbar Styles --------------------- */
+/* --------------------- Language Switcher --------------------- */
+.language-switcher {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 8%;
+    align-items: center;
+}
+
+.language-list {
+    display: flex;
+    gap: 20px; /* Space between language flags */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.language-list li {
+    display: inline;
+}
+
+.language-list li a {
+    color: var(--color-dark); /* Flag link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Navbar Styling */
+.navbar {
+    padding: 0.5rem 2rem;
+    display: flex;
+    background-color: var(--color-muted);
+    z-index: 10;
+}
+
+.navbar-brand:hover {
+    color: var(--color-light); /* Hover effect for brand */
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 20px; /* Spacing between menu items */
+}
+
+/* SHIFT Effect */
+.navbar-nav li a {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 3px;
+    position: relative;
+    z-index: 1;
+    font-size: 1.5rem;
+    color: var(--color-light); /* Default link color */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for the links */
+.navbar-nav li a:hover {
+    color: var(--color-dark);
+    transition: ease-in-out 0.3s; 
+}
+
+/* Underline animation using ::after pseudo-element */
+.navbar-nav li a::after {
+    display: block;
+    position: absolute;
+    content: ''; /* Empty content for the underline */
+    width: 0%; /* Initially, the width is 0% */
+    height: 2px; /* Line height */
+    background: var(--color-light); /* Underline color */
+    bottom: 0; /* Position at the bottom of the link */
+    left: 50%; /* Center the line horizontally */
+    transform: translateX(-50%); /* Adjust the position to center it */
+    visibility: hidden; /* Hidden initially */
+    opacity: 0; /* Hidden initially */
+    transition: width 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s; /* Smooth transition for width and opacity */
+}
+
+/* Hover effect to make the line expand */
+.navbar-nav li a:hover::after {
+    visibility: visible; /* Make the line visible */
+    opacity: 1; /* Make the line fully opaque */
+    width: 80%; /* Expand the width to cover the entire link */
+    transition: width 0.3s ease, opacity 0.3s ease; /* Smooth transition for expansion */
+}
+
+/* Navbar Branding */
+.navbar-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    letter-spacing: 0.1rem;
+    transition: color 0.3s ease-in-out; /* Restrict transition to color */
+}
+
+.navbar-brand:hover {
+    color: white; /* Change on hover */
+}
+
+/* Logo Styling */
+.logo.img {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    height: 70px; /* Adjust logo size */
+    width: auto;  /* Maintain aspect ratio */
+    transition: height 0.3s ease, transform 0.3s ease;
+}
+
+.logo.img:hover {
+    height: 90px;         /* Adjust logo size on hover */
+    transform: rotate(-5deg); /* Slight rotation on hover */
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 12px;
+}
+
+.navbar-nav li a {
+    color: var(--color-light);
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 3px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Mobile Navbar */
+@media (max-width: 768px) {
+       .navbar-nav {
+        width: 100%; /* Ensure full width for navbar items */
+        justify-content: center;
+    }
+    .navbar-brand {
+        display:none;    }
+        /* Logo Styling */
+.logo.img {
+    height: 50px; /* Adjust logo size */
+    width: auto;  /* Maintain aspect ratio */
+    transition: height 0.3s ease, transform 0.3s ease;
+}
+    }
+ 
+
+
+/* --------------------- Footer Styles --------------------- */
+footer {
+    background-color: #2C3E50;
+    color: #ECF0F1;
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 5%;
+}
+
+/* --------------------- Responsive Adjustments --------------------- */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar {
+        padding: 0.8rem;
+    }
+  
+    .container {
+        padding: 1rem;
+    }
+
+    footer {
+        padding: 1.5rem;
+    }
+
+    .sos-r1 {
+        font-size: 2em;
+    }
+
+    .sos-prep {
+        font-size: 1em;
+    }
+}
+
+
+/* --------------------- Testimonials Section --------------------- */
+.testimonials-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.testimonials-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --------------------- Scroll Fade-In --------------------- */
+.scroll-fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --------------------- Scroll Fade-Out --------------------- */
+.scroll-fade-out {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.scroll-fade-out.invisible {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+/* --------------------- Green Box Animation --------------------- */
+.greenbox {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.greenbox.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* --------------------- Main Heading --------------------- */
+.sos-r1 {
+    font-size: 1.3em;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 900;
+    line-height: 1.1em;
+    margin: 0;
+}
+
+/* --------------------- "of" Word Styling --------------------- */
+.sos-prep {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1em;
+    vertical-align: middle;
+    margin-top: -0.3em;
+    display: inline-block;
+}
+
+
+.social-media-links a {
+    margin: 0 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+}
+
+.social-media-links a:hover {
+    color: #007bff;
+}
+
+.social-media-links .bi {
+    margin-right: 5px;
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+}
