@@ -82,7 +82,7 @@
     <?php endif; ?>
 
     <!-- Testimonials Section -->
-    <section class="testimonials-section scroll-fade-in scroll-fade-out text-start bg-light">
+    <section class="testimonials-section scroll-fade-in scroll-fade-out text-start  bg-light">
         <h2 class="text-center">
             Testimonials
             <hr class="my-4">

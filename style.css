@@ -81,6 +81,10 @@
 body{
     background-color: var(--color-light-gray);
 }
+html, body {
+    overflow-x: hidden;
+}
+
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {

@@ -111,7 +111,6 @@
     padding: 4rem 2rem;
     margin: 3rem 0;
 }
-
 #testimonialsCarousel {
     width: 80%;
     margin: auto;
@@ -199,13 +198,16 @@ blockquote {
 /* --------------------- Info Box --------------------- */
 .info-box {
     padding: 20px;
+    height: auto;
+    width: 80%;
+    min-width: 50%;
     background-color: var(--color-light);
     border: solid 5px var(--color-primary);
     border-radius: 8px;
     box-shadow: var(--box-shadow-4s);
     margin: 20px auto;
     position: relative;
-    width: 85%;
+    width: 80%;
 }
 
 .btn-circle {
@@ -385,3 +387,5 @@ blockquote {
 .btn-secondary:hover {
     background-color: #3a6a99; /* Darker shade on hover */
 }
+
+

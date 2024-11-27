@@ -24,19 +24,13 @@ add_action('wp_enqueue_scripts', 'swim_coach_enqueue_styles');
 
 
 
-
-// Enqueue Bootstrap JavaScript (without jQuery)
 function swim_coach_enqueue_scripts() {
     wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js', array(), null, true);
-    
-    // Enqueue your custom scrollandmove.js script
-    wp_enqueue_script(
-        'scrollandmove-js', // Handle for the script
-        get_template_directory_uri() . '/js/scrollandmove.js', // Path to the JS file
-        array(), // Dependencies (none, unless needed)
-        null, // Version (you can set null for no versioning)
-        true // Load in the footer (true is recommended for performance)
-    );
+
+    // Load scrollandmove.js on specific pages only
+    if (is_front_page()) { // Example condition to load on the front page
+        wp_enqueue_script('scrollandmove-js', get_template_directory_uri() . '/js/scrollandmove.js', array(), null, true);
+    }
 }
 add_action('wp_enqueue_scripts', 'swim_coach_enqueue_scripts');
 
@@ -62,4 +56,7 @@ function swim_coach_remove_gutenberg_styles() {
     wp_dequeue_style('global-styles');
 }
 add_action('wp_enqueue_scripts', 'swim_coach_remove_gutenberg_styles', 100);
+
+
+
 ?>

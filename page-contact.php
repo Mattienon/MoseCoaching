@@ -65,8 +65,8 @@ get_header(); ?>
 
         <div class="so-me-section col-md-6 mb-4">
             <i class="bi bi-phone fs-3 mb-3"></i>
-            <h3><?php echo esc_html($section3); ?></h3>
-            <p><?php echo esc_html($section4); ?></p>
+            <h3><?php echo esc_html($section4); ?></h3>
+            <p><?php echo esc_html($section3); ?></p>
             
             <!-- Social Media Links -->
             <div class="social-media-links d-flex justify-content-center">
